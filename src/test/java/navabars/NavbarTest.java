@@ -14,10 +14,8 @@ public class NavbarTest extends BaseTest {
             navigstionbar.clickLink(link);
             String expectedHeader = navigstionbar.getExpectedLinkText(link);
             String actualHeader = navigstionbar.getPageHeader();
-            assertTrue(actualHeader.contains(expectedHeader),
-                    "Failed for link: " + link +
-                            " Expected to contain: " + expectedHeader +
-                            " Actual: " + actualHeader);
+            assertTrue(actualHeader.contains(expectedHeader), "Failed for link: " + link +
+                            " Expected to contain: " + expectedHeader + " Actual: " + actualHeader);
 
         }
     }
