@@ -3,15 +3,23 @@ package slider;
 import BaseTest.BaseTest;
 import org.testng.annotations.Test;
 
-import javax.swing.*;
+import static org.testng.Assert.assertTrue;
 
 public class PriceSliderTest extends BaseTest {
+
     @Test
     public void PriceSliderTest() {
-        var slide=homePage.clickFilterPrice();
-        slide.setPriceRange(30,70);
-        slide.clickFilterButton();
+        var slider = homePage.clickFilterPrice();
 
+        int minPrice = 30;
+        int maxPrice = 70;
+
+        slider.setPriceRange(minPrice, maxPrice);
+        slider.clickFilterButton();
+
+        assertTrue(
+                slider.arePricesWithinRange(minPrice, maxPrice),
+                "Some products are outside the selected price range"
+        );
     }
-
 }

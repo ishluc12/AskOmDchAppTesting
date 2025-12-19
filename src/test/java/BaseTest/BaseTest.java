@@ -23,8 +23,8 @@ public class BaseTest {
         homePage = new HomePage(driver);
     }
 
-    @AfterMethod
-    public void quit(){
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void quit(){
+//        driver.quit();
+//    }
 }
