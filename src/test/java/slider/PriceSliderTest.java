@@ -9,16 +9,14 @@ public class PriceSliderTest extends BaseTest {
 
     @Test
     public void PriceSliderTest() {
+
         var slider = homePage.clickFilterPrice();
 
         int minPrice = 30;
         int maxPrice = 70;
 
         slider.setPriceRange(minPrice, maxPrice);
-        slider.clickFilterButton();
-
-        assertTrue(
-                slider.arePricesWithinRange(minPrice, maxPrice),
+        assertTrue(slider.arePricesWithinRange(minPrice, maxPrice),
                 "Some products are outside the selected price range"
         );
     }
